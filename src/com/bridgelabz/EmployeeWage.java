@@ -2,19 +2,23 @@ package com.bridgelabz;
 
 public class EmployeeWage {
 
+    static final int WAGE_PER_HOUR = 20;
+    final int FULL_DAY_HOUR = 8;
+    final int PART_TIME__HOUR = 4;
+    final int IS_FULL_TIME = 2;
+    final int IS_PART_TIME = 1;
+    final int WORKING_DAY_PER_MONTH = 20;
+    final int WORKING_HOUR_PER_MONTH = 100;
+
+
     public static void main(String[] args) {
 
         System.out.println("...Welcome To Employee Wage Computation Program...");
+        EmployeeWage employeeWage = new EmployeeWage();
+        employeeWage.computeEmpWage();
+    }
 
-        final int WAGE_PER_HOUR = 20;
-        final int FULL_DAY_HOUR = 8;
-        final int PART_TIME__HOUR = 4;
-        final int IS_FULL_TIME = 2;
-        final int IS_PART_TIME = 1;
-        final int WORKING_DAY_PER_MONTH = 20;
-        final int WORKING_HOUR_PER_MONTH = 100;
-
-
+    public int computeEmpWage() {
         int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
         int workingHours = 0;
@@ -37,10 +41,11 @@ public class EmployeeWage {
                     System.out.println("Employee is Absent");
             }
             totalWage += empWage;
-            System.out.println("Employee daily wage Day : " + dayCount + " => " + empWage);
+            System.out.println("Employee daily wage Day: " + dayCount + " => " + empWage);
             dayCount++;
         }
         System.out.println("working Hours: " + workingHours);
-        System.out.println("Total wage: " + totalWage);
+        System.out.println("Total wage for company is: " + totalWage);
+        return totalWage;
     }
 }
