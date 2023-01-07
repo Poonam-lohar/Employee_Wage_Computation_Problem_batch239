@@ -1,24 +1,21 @@
 package com.bridgelabz;
 
 public class EmployeeWage {
-
-    static final int WAGE_PER_HOUR = 20;
-    final int FULL_DAY_HOUR = 8;
-    final int PART_TIME__HOUR = 4;
-    final int IS_FULL_TIME = 2;
-    final int IS_PART_TIME = 1;
-    final int WORKING_DAY_PER_MONTH = 20;
-    final int WORKING_HOUR_PER_MONTH = 100;
-
+    static final int FULL_DAY_HOUR = 8;
+    static final int PART_TIME__HOUR = 4;
+    static final int IS_FULL_TIME = 2;
+    static final int IS_PART_TIME = 1;
 
     public static void main(String[] args) {
-
-        System.out.println("...Welcome To Employee Wage Computation Program...");
+        System.out.println("...Welcome To Employee Wage Computation Problem...");
         EmployeeWage employeeWage = new EmployeeWage();
-        employeeWage.computeEmpWage();
+        employeeWage.computeEmpWage("Amazon", 20, 2, 10 );
+        employeeWage.computeEmpWage("Meesho", 10, 4, 20 );
+        employeeWage.computeEmpWage("Reliance", 10, 3, 10 );
+        employeeWage.computeEmpWage("Flipcart", 15, 5, 30 );
     }
 
-    public int computeEmpWage() {
+    public int computeEmpWage(String company, int WAGE_PER_HOUR, int WORKING_DAY_PER_MONTH, int WORKING_HOUR_PER_MONTH) {
         int empPresent = (int) (Math.floor(Math.random() * 10) % 3);
         int dayCount = 1;
         int workingHours = 0;
@@ -45,7 +42,7 @@ public class EmployeeWage {
             dayCount++;
         }
         System.out.println("working Hours: " + workingHours);
-        System.out.println("Total wage for company is: " + totalWage);
+        System.out.println("Total wage for company: " + company + " is: " + totalWage);
         return totalWage;
     }
 }
