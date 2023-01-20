@@ -21,7 +21,7 @@ public class EmpWageBuilder {
     }
 
 
-void computeEmpWage(){
+    void computeEmpWage() {
         int empPresent = (int) (Math.floor((Math.random() * 10) % 3));
         int dayCount = 1;
         int workingHrs = 0;
@@ -39,18 +39,25 @@ void computeEmpWage(){
                 case IS_PART_TIME:
                     empWage = wagePerHour * PART_TIME_HOUR;
                     workingHrs += PART_TIME_HOUR;
-                    System.out.println("Employee is Absent");
+                    System.out.println("Employee PART-TIME");
                     break;
                 default:
-                    System.out.println("Employee daily wage : " + dayCount + " == " + empWage);
-                    dayCount++;
+                    System.out.println("Employee is Absent");
             }
+            System.out.println("Employee daily wage Day : " + dayCount + " +> " + empWage);
+            dayCount++;
             System.out.println("Working Hours: " + workingHrs);
         }
-        totalWage = workingHrs * wagePerHour;
-}
+    }
+
     @Override
     public String toString() {
-        return "Total wage for company: " + company + " is " +totalWage;
+        return "EmpWageBuilder{" +
+                "company='" + company + '\'' +
+                ", wagePerHour=" + wagePerHour +
+                ", workingDayPerMonth=" + workingDayPerMonth +
+                ", workingHourPerMonth=" + workingHourPerMonth +
+                ", totalWage=" + totalWage +
+                '}';
     }
 }
